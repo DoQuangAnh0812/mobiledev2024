@@ -1,6 +1,5 @@
 package vn.edu.usth.weather;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,11 +14,13 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
-//        view.setBackgroundColor(Color.parseColor("#20FF0000"));
 
-//        ImageView view1 = view.findViewById(R.id.icon);
-//        return view;
+        /*
+        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
+        view.setBackgroundColor(Color.parseColor("#20FF0000"));
+        ImageView view1 = view.findViewById(R.id.icon);
+        return view;
+*/
 
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -28,7 +29,7 @@ public class ForecastFragment extends Fragment {
         textView.setText("Thursday");
 
         ImageView imageView = new ImageView(getContext());
-        imageView.setImageResource(R.drawable.cloudy);
+        imageView.setImageResource(R.drawable.cloud);
 
         linearLayout.addView(textView);
         linearLayout.addView(imageView);
