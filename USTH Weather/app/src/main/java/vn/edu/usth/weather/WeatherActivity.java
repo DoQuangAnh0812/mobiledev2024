@@ -8,7 +8,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-
 public class WeatherActivity extends AppCompatActivity {
 
     private static final String TAG = "WeatherActivity";
@@ -26,7 +25,7 @@ public class WeatherActivity extends AppCompatActivity {
         });
 
         ForecastFragment firstFragment = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.main, firstFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.frame, firstFragment).commit();
     }
 
     @Override
@@ -34,25 +33,21 @@ public class WeatherActivity extends AppCompatActivity {
         super.onStart();
         Log.i(TAG, "onStart");
     }
-
     @Override
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "onResume");
     }
-
     @Override
     protected void onPause() {
         super.onPause();
         Log.i(TAG, "onPause");
     }
-
     @Override
     protected void onStop() {
         super.onStop();
         Log.i(TAG, "onStop");
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
