@@ -25,15 +25,15 @@
             android:textStyle="bold"></TextView>
 
 
-        <ImageView
-            android:layout_width="48dp"
+        <ImageButton
+            android:layout_width="55dp"
             android:layout_height="match_parent"
             android:background="#3F51B5"
             android:src="@drawable/reload"
             android:gravity="center_vertical"
             android:layout_marginRight="15dp"
             android:contentDescription="Refresh">
-        </ImageView>
+        </ImageButton>
 
         <ImageView
             android:layout_width="48dp"
@@ -107,7 +107,7 @@
             android:layout_width="59dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:src="@drawable/wind"
+            android:src="@drawable/cloud"
             tools:ignore="ContentDescription">
         </ImageView>
 
@@ -116,7 +116,7 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:gravity="center"
-            android:text="Windy\n 20°C – 27°C">
+            android:text="Cloudy\n 20°C – 27°C">
         </TextView>
 
     </LinearLayout>
@@ -419,6 +419,42 @@
             android:layout_weight="3"
             android:gravity="center"
             android:text="Sunny\n 21°C - 34°C">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="#200000FF"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="THU"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="59dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/sun"
+            tools:ignore="ContentDescription">
+        </ImageView>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="Sunny\n 27°C - 39°C">
 
         </TextView>
     </LinearLayout>
