@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">USTH Weather</string>
+    <string name="app_name">Weather App</string>
+    <string name="welcome_message">Welcome to the Weather App</string>
 </resources>

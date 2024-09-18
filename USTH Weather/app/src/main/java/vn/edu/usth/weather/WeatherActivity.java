@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -16,22 +19,18 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate");
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_weather);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-    //    ForecastFragment firstFragment = new ForecastFragment();
-    //    getSupportFragmentManager().beginTransaction().add(R.id.frag, firstFragment).commit();
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        WeatherAndForecastPagerAdapter adapter = new WeatherAndForecastPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
 
-        ForecastFragment firstFragment = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.frag, firstFragment).commit();
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
 
-        WeatherFragment secondFragment = new WeatherFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.frag, secondFragment).commit();
+        tabLayout.getTabAt(0).setText("Today");
+        tabLayout.getTabAt(1).setText("Tomorrow");
+        tabLayout.getTabAt(2).setText("Next Day");
     }
 
     @Override
@@ -39,21 +38,25 @@ public class WeatherActivity extends AppCompatActivity {
         super.onStart();
         Log.i(TAG, "onStart");
     }
+
     @Override
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "onResume");
     }
+
     @Override
     protected void onPause() {
         super.onPause();
         Log.i(TAG, "onPause");
     }
+
     @Override
     protected void onStop() {
         super.onStop();
         Log.i(TAG, "onStop");
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
