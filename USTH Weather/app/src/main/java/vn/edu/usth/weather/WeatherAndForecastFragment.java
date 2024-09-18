@@ -12,10 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 public class WeatherAndForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate a new layout that includes both weather and forecast fragments
         View view = inflater.inflate(R.layout.fragment_weather_and_forecast, container, false);
 
-        // Add WeatherFragment
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.weather_fragment_container, new WeatherFragment());

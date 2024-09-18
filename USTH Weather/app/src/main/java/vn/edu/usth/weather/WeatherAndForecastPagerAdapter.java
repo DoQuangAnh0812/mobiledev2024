@@ -12,7 +12,6 @@ public class WeatherAndForecastPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // Return instances of WeatherAndForecastFragment
         return new WeatherAndForecastFragment();
     }
 
@@ -22,7 +21,6 @@ public class WeatherAndForecastPagerAdapter extends FragmentPagerAdapter {
     }
 
     public CharSequence getPageTitle(int position) {
-        // Set title for each tab
         switch (position) {
             case 0:
                 return "Today";
